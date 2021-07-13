@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import br.com.alura.gerenciador.model.Empresa;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -38,12 +39,9 @@ public class NovaEmpresaServlet extends HttpServlet {
 		
 		banco.adicionar(empresa);
 		
-		
-		pw.println("<html>");
-		pw.println("<body>");
-		pw.println("Nova empresa " + nomeEmpresa + " adicionada com sucesso!");
-		pw.println("</body>");
-		pw.println("</html>");
+		RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");
+		request.setAttribute("empresa", empresa.getNome());
+		rd.forward(request, response);
 		
 		System.out.println("Servlet Nova Empresa foi ativado com sucesso!");
 	}
