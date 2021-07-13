@@ -3,6 +3,7 @@ package br.com.alura.gerenciador.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import br.com.alura.gerenciador.model.Empresa;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -29,6 +30,14 @@ public class NovaEmpresaServlet extends HttpServlet {
 		PrintWriter pw = response.getWriter();
 		
 		String nomeEmpresa = request.getParameter("nome");
+		
+		Empresa empresa = new Empresa();
+		empresa.setNome(nomeEmpresa);
+		
+		Banco banco = new Banco();
+		
+		banco.adicionar(empresa);
+		
 		
 		pw.println("<html>");
 		pw.println("<body>");
