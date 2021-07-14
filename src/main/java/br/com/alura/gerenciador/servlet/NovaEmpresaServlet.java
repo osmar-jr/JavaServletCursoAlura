@@ -1,7 +1,6 @@
 package br.com.alura.gerenciador.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import br.com.alura.gerenciador.model.Empresa;
 import jakarta.servlet.RequestDispatcher;
@@ -28,8 +27,6 @@ public class NovaEmpresaServlet extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PrintWriter pw = response.getWriter();
-		
 		String nomeEmpresa = request.getParameter("nome");
 		
 		Empresa empresa = new Empresa();

@@ -1,10 +1,10 @@
 package br.com.alura.gerenciador.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import br.com.alura.gerenciador.model.Empresa;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -31,17 +31,10 @@ public class ListaEmpresasServlet extends HttpServlet {
 		Banco banco = new Banco();
 		List<Empresa> empresas = banco.getEmpresas();
 		
-		PrintWriter pw = response.getWriter();
+		request.setAttribute("empresas", empresas);
 		
-		pw.println("<html><body>");
-		pw.println("<ul>");
-		
-		for (Empresa empresa : empresas) {
-			pw.println("<li>" + empresa.getNome() + "</li>");
-		}
-		
-		pw.println("</ul>");
-		pw.println("</body></html>");
+		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas.jsp");
+		rd.forward(request, response);
 	}
 
 }
