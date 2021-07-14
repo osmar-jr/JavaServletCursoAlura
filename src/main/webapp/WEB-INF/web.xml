@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd http://java.sun.com/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee" id="WebApp_ID" version="2.5">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID" version="2.5">
   <display-name>gerenciador</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -28,5 +28,35 @@
   <servlet-mapping>
     <servlet-name>ListaEmpresasServlet</servlet-name>
     <url-pattern>/listaEmpresas</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RemoveEmpresaServlet</display-name>
+    <servlet-name>RemoveEmpresaServlet</servlet-name>
+    <servlet-class>br.com.alura.gerenciador.servlet.RemoveEmpresaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RemoveEmpresaServlet</servlet-name>
+    <url-pattern>/removeEmpresa</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MostraEmpresaServlet</display-name>
+    <servlet-name>MostraEmpresaServlet</servlet-name>
+    <servlet-class>br.com.alura.gerenciador.servlet.MostraEmpresaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MostraEmpresaServlet</servlet-name>
+    <url-pattern>/mostraEmpresa</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditaEmpresaServlet</display-name>
+    <servlet-name>EditaEmpresaServlet</servlet-name>
+    <servlet-class>br.com.alura.gerenciador.servlet.EditaEmpresaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditaEmpresaServlet</servlet-name>
+    <url-pattern>/editaEmpresa</url-pattern>
   </servlet-mapping>
 </web-app>
