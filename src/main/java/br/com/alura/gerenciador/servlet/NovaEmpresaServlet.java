@@ -7,6 +7,7 @@ import java.util.Date;
 
 import br.com.alura.gerenciador.model.Empresa;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -14,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class NovaEmpresaServlet
  */
-
+@WebServlet("/novaEmpresa")
 public class NovaEmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

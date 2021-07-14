@@ -6,6 +6,7 @@ import java.util.List;
 import br.com.alura.gerenciador.model.Empresa;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -13,6 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ListaEmpresasServlet
  */
+@WebServlet("/listaEmpresas")
 public class ListaEmpresasServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
