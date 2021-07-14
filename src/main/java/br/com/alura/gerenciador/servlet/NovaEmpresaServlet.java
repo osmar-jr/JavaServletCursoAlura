@@ -6,7 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import br.com.alura.gerenciador.model.Empresa;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -51,12 +50,11 @@ public class NovaEmpresaServlet extends HttpServlet {
 		Banco banco = new Banco();
 		
 		banco.adicionar(empresa);
-		
-		RequestDispatcher rd = request.getRequestDispatcher("/novaEmpresaCriada.jsp");
 		request.setAttribute("empresa", empresa.getNome());
-		rd.forward(request, response);
+		response.sendRedirect("listaEmpresas");
 		
-		System.out.println("Servlet Nova Empresa foi ativado com sucesso!");
+//		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
+//		rd.forward(request, response);
 	}
 
 }

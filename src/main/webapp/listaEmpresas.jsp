@@ -13,10 +13,15 @@
 <title>Empresas Cadastradas with Java Standard Tag Library</title>
 </head>
 <body>
+	
+	<c:if test="${ not empty empresa }">
+		Nova empresa ${empresa} adicionada com sucesso!
+		<br>
+	</c:if>
+	
 	Lista de Empresas:
+	
 	<br>
-	
-	
 	<ul>
 		<c:forEach items="${ empresas }" var="empresa">
 			<li>${ empresa.nome } | <fmt:formatDate value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy" /> </li>
